@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo08_LamdaExpression_01",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo09_FunActionPredicate_LamdaExpression", "Demo09_FunActionPredicate_LamdaExpression\Demo09_FunActionPredicate_LamdaExpression.csproj", "{7B970617-8518-477A-BA18-C4CF388644DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo10_Events", "Demo10_Events\Demo10_Events.csproj", "{28ACC0ED-FCA8-473E-A7FC-6B163D4F5064}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo11_LINQ", "Demo11_LINQ\Demo11_LINQ.csproj", "{D26181A0-6333-43FE-8131-583317D68371}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,14 @@ Global
 		{7B970617-8518-477A-BA18-C4CF388644DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B970617-8518-477A-BA18-C4CF388644DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B970617-8518-477A-BA18-C4CF388644DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28ACC0ED-FCA8-473E-A7FC-6B163D4F5064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28ACC0ED-FCA8-473E-A7FC-6B163D4F5064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28ACC0ED-FCA8-473E-A7FC-6B163D4F5064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28ACC0ED-FCA8-473E-A7FC-6B163D4F5064}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D26181A0-6333-43FE-8131-583317D68371}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D26181A0-6333-43FE-8131-583317D68371}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D26181A0-6333-43FE-8131-583317D68371}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D26181A0-6333-43FE-8131-583317D68371}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
