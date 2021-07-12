@@ -16,7 +16,7 @@ namespace Demo12
             Console.ReadKey();
         }
         private static void WriteData()
-        {
+        {           
             using (var fs = new FileStream(@"C:\FIS-Global\ReadMe.dat", FileMode.Create, FileAccess.Write))
             using (var br = new BinaryWriter(fs))
             {

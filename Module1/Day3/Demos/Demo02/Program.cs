@@ -30,6 +30,7 @@ namespace Demo02
             try
             {
                 var account = new Account();
+
                 Console.WriteLine("Enter amount to deposit");
                 double amount = Convert.ToDouble(Console.ReadLine());
                 account.Deposit(amount);
