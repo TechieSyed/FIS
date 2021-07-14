@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -7,12 +8,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D3D14BBD-5F57-4480-B1C9-6D4AC02B236A}</ProjectGuid>
+    <ProjectGuid>{E60E81C8-ED53-4A5A-B48F-854EDC6A8C68}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Demo02_StandardControls</RootNamespace>
-    <AssemblyName>Demo02_StandardControls</AssemblyName>
+    <RootNamespace>Demo03_CRUDOperations</RootNamespace>
+    <AssemblyName>Demo03_CRUDOperations</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -43,7 +44,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,72 +76,70 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Departments.aspx" />
+    <Content Include="Employees.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Models\FISModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FISModel.edmx</DependentUpon>
+      <LastGenOutput>FISModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\FISModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FISModel.edmx</DependentUpon>
+      <LastGenOutput>FISModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
-    <Content Include="WebForm1_LabelAndTextBox.aspx" />
-    <Content Include="WebForm2_RadioButtons.aspx" />
-    <Content Include="WebForm3_CheckBoxes.aspx" />
-    <Content Include="WebForm4_Button.aspx" />
-    <Content Include="WebForm5_DropDownList.aspx" />
-    <Content Include="WebForm6_IsPostBack.aspx" />
-    <Content Include="WebForm7_Redirecting.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Departments.aspx.cs">
+      <DependentUpon>Departments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Departments.aspx.designer.cs">
+      <DependentUpon>Departments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employees.aspx.cs">
+      <DependentUpon>Employees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employees.aspx.designer.cs">
+      <DependentUpon>Employees.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Department.cs">
+      <DependentUpon>FISModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee.cs">
+      <DependentUpon>FISModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FISModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FISModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FISModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FISModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FISModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FISModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebForm1_LabelAndTextBox.aspx.cs">
-      <DependentUpon>WebForm1_LabelAndTextBox.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1_LabelAndTextBox.aspx.designer.cs">
-      <DependentUpon>WebForm1_LabelAndTextBox.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm2_RadioButtons.aspx.cs">
-      <DependentUpon>WebForm2_RadioButtons.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm2_RadioButtons.aspx.designer.cs">
-      <DependentUpon>WebForm2_RadioButtons.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm3_CheckBoxes.aspx.cs">
-      <DependentUpon>WebForm3_CheckBoxes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm3_CheckBoxes.aspx.designer.cs">
-      <DependentUpon>WebForm3_CheckBoxes.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm4_Button.aspx.cs">
-      <DependentUpon>WebForm4_Button.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm4_Button.aspx.designer.cs">
-      <DependentUpon>WebForm4_Button.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm5_DropDownList.aspx.cs">
-      <DependentUpon>WebForm5_DropDownList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm5_DropDownList.aspx.designer.cs">
-      <DependentUpon>WebForm5_DropDownList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm6_IsPostBack.aspx.cs">
-      <DependentUpon>WebForm6_IsPostBack.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm6_IsPostBack.aspx.designer.cs">
-      <DependentUpon>WebForm6_IsPostBack.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm7_Redirecting.aspx.cs">
-      <DependentUpon>WebForm7_Redirecting.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm7_Redirecting.aspx.designer.cs">
-      <DependentUpon>WebForm7_Redirecting.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="Models\FISModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FISModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\FISModel.edmx.diagram">
+      <DependentUpon>FISModel.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -143,7 +150,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -158,9 +167,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51593</DevelopmentServerPort>
+          <DevelopmentServerPort>57685</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51593/</IISUrl>
+          <IISUrl>http://localhost:57685/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -175,7 +184,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

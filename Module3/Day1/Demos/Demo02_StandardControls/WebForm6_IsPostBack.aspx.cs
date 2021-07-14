@@ -19,9 +19,7 @@ namespace Demo02_StandardControls
                 ddlDepartments.Items.Add(new ListItem { Text = "HR", Value = "101" });
                 ddlDepartments.Items.Add(new ListItem { Text = "Accounts", Value = "102" });
                 ddlDepartments.Items.Add(new ListItem { Text = "IT", Value = "103" });
-            }
-
-           
+            }           
         }
     }
 }

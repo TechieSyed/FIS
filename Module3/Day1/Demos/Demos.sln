@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo01_HelloWorld", "Demo01
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo02_StandardControls", "Demo02_StandardControls\Demo02_StandardControls.csproj", "{D3D14BBD-5F57-4480-B1C9-6D4AC02B236A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo03_CRUDOperations", "Demo03_CRUDOperations\Demo03_CRUDOperations.csproj", "{E60E81C8-ED53-4A5A-B48F-854EDC6A8C68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D3D14BBD-5F57-4480-B1C9-6D4AC02B236A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3D14BBD-5F57-4480-B1C9-6D4AC02B236A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3D14BBD-5F57-4480-B1C9-6D4AC02B236A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E60E81C8-ED53-4A5A-B48F-854EDC6A8C68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E60E81C8-ED53-4A5A-B48F-854EDC6A8C68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E60E81C8-ED53-4A5A-B48F-854EDC6A8C68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E60E81C8-ED53-4A5A-B48F-854EDC6A8C68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
