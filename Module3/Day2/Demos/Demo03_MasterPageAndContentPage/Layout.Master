@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Layout.master.cs" Inherits="Demo03_MasterPageAndContentPage.Layout" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server" id="frm">
+
+        <header>
+            <h1>ABC Services pvt Ltd</h1>
+            <menu>
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebForm1.aspx">Web Form 1</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/WebForm2.aspx">Web Form 2</asp:HyperLink>
+            </menu>
+        </header>
+        <article>
+            <asp:ContentPlaceHolder runat="server" ID="ChildContent">
+               <%-- Always be left blank. Content pages will add content in it--%>
+            </asp:ContentPlaceHolder>
+        </article>
+        <footer>
+            <p>Copyright Xyz Services : <%=DateTime.Now.Year %></p>
+        </footer>
+
+    </form>
+</body>
+</html>
