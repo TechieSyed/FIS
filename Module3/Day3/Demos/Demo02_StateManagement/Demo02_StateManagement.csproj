@@ -67,12 +67,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Logs\Errors.txt" />
     <Content Include="Web.config" />
     <Content Include="WebForm1_WhyStateManagement.aspx" />
     <Content Include="WebForm2_HiddenField.aspx" />
+    <Content Include="WebForm3_QueryString1.aspx" />
+    <Content Include="WebForm4_QueryString2.aspx" />
+    <Content Include="WebForm5_Cookies.aspx" />
+    <Content Include="WebForm6_SessionObject.aspx" />
+    <Content Include="WebForm7_ApplicationObject.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -90,6 +104,41 @@
     </Compile>
     <Compile Include="WebForm2_HiddenField.aspx.designer.cs">
       <DependentUpon>WebForm2_HiddenField.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm3_QueryString1.aspx.cs">
+      <DependentUpon>WebForm3_QueryString1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm3_QueryString1.aspx.designer.cs">
+      <DependentUpon>WebForm3_QueryString1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm4_QueryString2.aspx.cs">
+      <DependentUpon>WebForm4_QueryString2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm4_QueryString2.aspx.designer.cs">
+      <DependentUpon>WebForm4_QueryString2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm5_Cookies.aspx.cs">
+      <DependentUpon>WebForm5_Cookies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm5_Cookies.aspx.designer.cs">
+      <DependentUpon>WebForm5_Cookies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm6_SessionObject.aspx.cs">
+      <DependentUpon>WebForm6_SessionObject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm6_SessionObject.aspx.designer.cs">
+      <DependentUpon>WebForm6_SessionObject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm7_ApplicationObject.aspx.cs">
+      <DependentUpon>WebForm7_ApplicationObject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm7_ApplicationObject.aspx.designer.cs">
+      <DependentUpon>WebForm7_ApplicationObject.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
